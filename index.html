@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Watchlist</title>
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <meta name="description" content="A simple movie watchlist application">
+    <link rel="stylesheet" href="assets/styles/main.css">
+</head>
+<body class="dark:bg-[#121212] bg-white text-black dark:text-white">
+    <header class="header">
+        <h1 class="text-3xl font-bold">
+            Find your film
+        </h1>
+        <a href="watchlist.html">My Watchlist</a>
+    </header>
+    <main class="main">
+        <div class="cont">
+            <form class="search_movie" id="search_movie">
+                <input type="text" class="movie_input" id="movie_input" placeholder="Search for a movie">
+                <button type="submit" class="search_btn" id="search_btn">Searches</button>
+            </form>
+            <div class="movie_cont">
+                <img src="/assets/images/no-data-initial.svg" alt="Start exploring" class="placeholder_img">
+            </div>
+        </div>
+    </main>
+    <script type="module" src="/assets/scripts/main.js"></script>
+</body>
+</html>
