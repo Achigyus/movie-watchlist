@@ -55,7 +55,10 @@ const movieApiKey = import.meta.env.VITE_OMDB_API_KEY;
 async function handleFormSubmit(e) {
     e.preventDefault();
     const movieName = input.value.trim();
-    if (!movieName) return;
+    if (!movieName) {
+        movieContainer.innerHTML = '<p>Unable to find what you’re looking for. Please try another search.</p>'
+        return;
+    }
     console.log('Form submitted');
 
     // Fetch movie data from OMDB API
@@ -108,6 +111,20 @@ function renderMovieList(movies, reset = false) {
                 <p class="movie_plot">${movie.Plot}</p>
             </div>
         `
+        movieCard.querySelector('.add_watchlist_btn').addEventListener('click', async () => {
+            try {
+                let movieInLocalStorage = JSON.parse(localStorage.getItem('watchlist')) || [];
+                if (movieInLocalStorage.some(m => m.imdbID === movie.imdbID)) {
+                    alert('Movie already in watchlist');
+                    return;
+                }
+                movieInLocalStorage.push(movie);
+                localStorage.setItem('watchlist', JSON.stringify(movieInLocalStorage));
+                alert('Movie added to watchlist');
+            } catch (error) {
+                console.error('Error adding to watchlist:', error);
+            }
+        })
         movieContainer.appendChild(movieCard)
     })
     currentRenderIndex += moviesToRender.length;
