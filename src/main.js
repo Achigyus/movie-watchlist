@@ -5,7 +5,8 @@ const input = document.getElementById('movie_input')
 const movieContainer = document.getElementById('movie_cont')
 let movieList = []
 let currentRenderIndex = 0
-let plusIcon = 'assets/images/plus-light.svg' // Default icon
+let plusIcon = 'images/plus-light.svg' // Default icon
+let placeholderIcon = 'images/no-data-initial.svg' // Default icon
 
 form.addEventListener('submit', handleFormSubmit)
 
@@ -90,7 +91,7 @@ function renderMovieList(movies, reset = false) {
                     <div class="movie flex gap-6 items-center">
                         <p class="movie_runtime text-xs leading-[1.67] font-normal text-[#111827] dark:text-white">${movie.Runtime}</p>
                         <p class="movie_genre text-xs leading-[1.67] font-normal text-[#111827] dark:text-white">${movie.Genre}</p>
-                        <button class="add_watchlist_btn text-xs cursor-pointer leading-[1.67] flex gap-[5px] items-center font-normal text-[#111827] dark:text-white"><img src="${plusIcon}" alt="Add to Watchlist"> Watchlist</button>
+                        <button class="add_watchlist_btn text-xs cursor-pointer leading-[1.67] flex gap-[5px] items-center font-normal text-[#111827] dark:text-white"><img src="${plusIcon}" class="plus_icon" alt="Add to Watchlist"> Watchlist</button>
                     </div>
                     <p class="movie_plot text-sm text-[#6B7280] font-normal dark:text-[#A5A5A5]">${movie.Plot}</p>
                 </div>
@@ -135,11 +136,18 @@ function renderMovieList(movies, reset = false) {
 }
 
 function setThemePlaceholder() {
+    console.log("Setting theme placeholder");
     const img = document.getElementById('theme_placeholder_img');
-    if (!img) return;
     const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    img.src = isDark ? '/assets/images/Group 199.svg' : '/assets/images/no-data-initial.svg';
-    plusIcon = isDark ? 'assets/images/plus-dark.svg' : 'assets/images/plus-light.svg';
+    plusIcon = isDark ? 'images/plus-dark.svg' : 'images/plus-light.svg';
+    placeholderIcon = isDark ? 'images/Group 199.svg' : 'images/no-data-initial.svg';
+    let plusIcons = document.querySelectorAll('.plus_icon');
+    console.log("Updating plus icons", plusIcons);
+    plusIcons.forEach(icon => {
+        icon.src = plusIcon;
+    });
+    if (!img) return;
+    img.src = placeholderIcon;
 }
 setThemePlaceholder();
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', setThemePlaceholder);

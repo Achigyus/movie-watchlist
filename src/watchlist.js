@@ -1,8 +1,12 @@
 const movieContainer = document.getElementById('movie_cont')
 let movieList = []
 let currentRenderIndex = 0
-let minusIcon = 'assets/images/minus-light.svg' // Default icon
-let plusIcon = 'assets/images/plus-light.svg' // Default icon
+let minusIconLight = 'images/minus-light.svg'
+let minusIconDark = 'images/minus-dark.svg'
+let plusIconLight = 'images/plus-light.svg'
+let plusIconDark = 'images/plus-dark.svg'
+let minusIcon = minusIconLight // Default icon
+let plusIcon = plusIconLight // Default icon
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -34,7 +38,7 @@ function renderMovieList(movies, reset = false) {
         if (movies.length === 0) {
             movieContainer.innerHTML = `
                 <p class="text-center mb-3.5 font-bold text-lg leading-[1.1] text-[#DFDDDD] dark:text-[#787878]">Your watchlist is looking a little empty...</p>
-                <a href="index.html" class="flex items-center gap-2 font-bold"><img src="${plusIcon}" alt="Go to search page"> Let’s add some movies!</a>
+                <a href="index.html" class="flex items-center gap-2 font-bold"><img src="${plusIcon}" class="plus_icon" alt="Go to search page"> Let’s add some movies!</a>
             `;
             return;
         }
@@ -60,7 +64,7 @@ function renderMovieList(movies, reset = false) {
                     <div class="movie flex gap-6 items-center">
                         <p class="movie_runtime text-xs leading-[1.67] font-normal text-[#111827] dark:text-white">${movie.Runtime}</p>
                         <p class="movie_genre text-xs leading-[1.67] font-normal text-[#111827] dark:text-white">${movie.Genre}</p>
-                        <button class="remove_watchlist_btn text-xs cursor-pointer leading-[1.67] flex gap-[5px] items-center font-normal text-[#111827] dark:text-white"><img src="${minusIcon}" alt="Remove from Watchlist"> Remove</button>
+                        <button class="remove_watchlist_btn text-xs cursor-pointer leading-[1.67] flex gap-[5px] items-center font-normal text-[#111827] dark:text-white"><img class="minus_icon" src="${minusIcon}" alt="Remove from Watchlist"> Remove</button>
                     </div>
                     <p class="movie_plot text-sm text-[#6B7280] font-normal dark:text-[#A5A5A5]">${movie.Plot}</p>
                 </div>
@@ -103,8 +107,16 @@ function renderMovieList(movies, reset = false) {
 
 function setThemePlaceholder() {
     const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    minusIcon = isDark ? 'assets/images/minus-dark.svg' : 'assets/images/minus-light.svg';
-    plusIcon = isDark ? 'assets/images/plus-dark.svg' : 'assets/images/plus-light.svg';
+    minusIcon = isDark ? minusIconDark : minusIconLight;
+    plusIcon = isDark ? plusIconDark : plusIconLight;
+    let minusIcons = document.querySelectorAll('.minus_icon');
+    let plusIcons = document.querySelectorAll('.plus_icon');
+    minusIcons.forEach(icon => {
+        icon.src = minusIcon;
+    });
+    plusIcons.forEach(icon => {
+        icon.src = plusIcon;
+    });
 }
 setThemePlaceholder();
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', setThemePlaceholder);

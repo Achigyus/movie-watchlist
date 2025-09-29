@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie Watchlist</title>
-    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
     <meta name="description" content="A simple movie watchlist application">
     <!-- Additional metadata -->
     <meta name="author" content="Movie Watchlist App">
@@ -16,35 +20,40 @@
     <meta property="og:description" content="A simple movie watchlist application">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://movie-watchlist-achigyus.netlify.app/watchlist.html">
-    <meta property="og:image" content="https://movie-watchlist-achigyus.netlify.app/assets/images/og-image.png">
+    <meta property="og:image" content="https://movie-watchlist-achigyus.netlify.app/images/og-image.png">
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Movie Watchlist">
     <meta name="twitter:description" content="A simple movie watchlist application">
-    <meta name="twitter:image" content="https://movie-watchlist-achigyus.netlify.app/assets/images/og-image.png">
+    <meta name="twitter:image" content="https://movie-watchlist-achigyus.netlify.app/images/og-image.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="assets/styles/main.css">
+    <link rel="stylesheet" href="/src/style.css">
+
 </head>
+
 <body class="dark:bg-[#181F2A] bg-[#E3E8F0] text-black dark:text-white font-['Inter',sans-serif]">
     <div class="wrap max-w-[550px] mx-auto bg-white dark:bg-[#121212] min-h-dvh">
-        <header class="header flex justify-between bg-[url('/assets/images/image36.png')] bg-[#1C1C1C] items-center py-20 px-11">
+        <header
+            class="header flex justify-between bg-[url('/images/image36.png')] bg-[#1C1C1C] items-center py-20 px-11">
             <h1 class="text-[42px] text-white leading-[0.56] font-extrabold">
                 My Watchlist
             </h1>
-            <a class="text-sm font-bold text-white" href="index.html">Search for movies</a>
+            <a class="text-sm font-bold text-white" href="/index.html">Search for movies</a>
         </header>
         <main class="main">
             <div class="cont">
-                <div class="movie_cont min-h-[73dvh] px-11 flex flex-col items-center py-10 justify-center" id="movie_cont">
+                <div class="movie_cont min-h-[73dvh] px-11 flex flex-col items-center py-10 justify-center"
+                    id="movie_cont">
                     <!-- Movie cards will be rendered here -->
                 </div>
             </div>
         </main>
     </div>
-    <script type="module" src="/assets/scripts/watchlist.js"></script>
+    <script type="module" src="/src/watchlist.js"></script>
 </body>
+
 </html>
