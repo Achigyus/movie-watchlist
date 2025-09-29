@@ -7,6 +7,22 @@
     <title>Movie Watchlist</title>
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
     <meta name="description" content="A simple movie watchlist application">
+    <!-- Additional metadata -->
+    <meta name="author" content="Movie Watchlist App">
+    <meta name="theme-color" content="#1C1C1C" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#F5F5F5" media="(prefers-color-scheme: light)">
+    <link rel="canonical" href="https://yourdomain.com/index.html">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Movie Watchlist">
+    <meta property="og:description" content="A simple movie watchlist application">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com/index.html">
+    <meta property="og:image" content="https://yourdomain.com/assets/images/og-image.png">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Movie Watchlist">
+    <meta name="twitter:description" content="A simple movie watchlist application">
+    <meta name="twitter:image" content="https://yourdomain.com/assets/images/og-image.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -15,8 +31,8 @@
     <link rel="stylesheet" href="assets/styles/main.css">
 </head>
 
-<body class="dark:bg-[#1C1C1C] bg-[#F5F5F5] text-black dark:text-white font-['Inter',sans-serif]">
-    <div class="wrap max-w-[550px] mx-auto border bg-white dark:bg-[#121212] min-h-dvh">
+<body class="dark:bg-[#181F2A] bg-[#E3E8F0] text-black dark:text-white font-['Inter',sans-serif]">
+    <div class="wrap max-w-[550px] mx-auto bg-white dark:bg-[#121212] min-h-dvh">
         <header class="header flex justify-between bg-[url('/assets/images/image36.png')] bg-[#1C1C1C] items-center py-20 px-11">
             <h1 class="text-[42px] text-white leading-[0.56] font-extrabold">
                 Find your film
@@ -29,14 +45,14 @@
                     id="search_movie">
                     <div class="relative w-[74%]">
                         <input type="text"
-                            class="w-full movie_input py-[9px] pl-10 pr-[13px] bg-white border-[1px] border-[#D1D5DB] dark:bg-[#2E2E2F] shadow-[0px_1px_2px_rgba(0, 0, 0, 0.05)] font-medium rounded-l-md text-sm text-[#6B7280] dark:text-[#A5A5A5]"
+                            class="w-full movie_input py-[9px] pl-10 pr-[13px] bg-white border-[1px] border-[#D1D5DB] dark:border-0 dark:bg-[#2E2E2F] shadow-[0px_1px_2px_rgba(0, 0, 0, 0.05)] font-medium rounded-l-md text-sm text-[#6B7280] dark:text-[#A5A5A5]"
                             id="movie_input" placeholder="Search for a movie">
                         <span class="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none">
                             <img src="assets/images/Icon.svg" alt="Search" class="w-4 h-4 opacity-70">
                         </span>
                     </div>
                     <button type="submit"
-                        class="w-[26%] search_btn text-[#374151] dark:text-white bg-[#F9FAFB] border-[1px] border-[#D1D5DB] dark:bg-[#4B4B4B] cursor-pointer rounded-r-md text-sm font-medium px-9 py-2"
+                        class="w-[26%] search_btn text-[#374151] dark:text-white bg-[#F9FAFB] border-[1px] border-[#D1D5DB] dark:border-0 dark:bg-[#4B4B4B] cursor-pointer rounded-r-md text-sm font-medium px-9 py-2"
                         id="search_btn">Search</button>
                 </form>
                 <div class="movie_cont min-h-[73dvh] px-11 flex flex-col items-center py-10 justify-center" id="movie_cont">
