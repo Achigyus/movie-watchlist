@@ -36,15 +36,15 @@
 
 <body class="dark:bg-[#181F2A] bg-[#E3E8F0] text-black dark:text-white font-['Inter',sans-serif]">
     <div class="wrap max-w-[550px] mx-auto bg-white dark:bg-[#121212] min-h-dvh">
-        <header class="header flex justify-between bg-[url('/images/image36.png')] bg-[#1C1C1C] items-center py-20 px-11">
-            <h1 class="text-[42px] text-white leading-[0.56] font-extrabold">
+        <header class="header flex justify-between bg-[url('/images/image36.png')] bg-[#1C1C1C] items-center py-20 px-5 sm:px-11">
+            <h1 class="text-[30px] sm:text-[42px] text-white leading-[0.56] font-extrabold">
                 Find your film
             </h1>
-            <a class="text-sm font-bold text-white" href="watchlist.html">My Watchlist</a>
+            <a class="text-xs sm:text-sm font-bold text-white" href="watchlist.html">My Watchlist</a>
         </header>
         <main class="main">
             <div class="cont relative">
-                <form class="absolute -top-5 right-0 left-0 search_movie px-11 mx-auto flex items-stretch"
+                <form class="absolute -top-5 right-0 left-0 search_movie px-5 sm:px-11 mx-auto flex items-stretch"
                     id="search_movie">
                     <div class="relative w-[74%]">
                         <input type="text"
@@ -55,10 +55,10 @@
                         </span>
                     </div>
                     <button type="submit"
-                        class="w-[26%] search_btn text-[#374151] dark:text-white bg-[#F9FAFB] border-[1px] border-[#D1D5DB] dark:border-0 dark:bg-[#4B4B4B] cursor-pointer rounded-r-md text-sm font-medium px-9 py-2"
+                        class="w-[26%] search_btn text-[#374151] dark:text-white bg-[#F9FAFB] border-[1px] border-[#D1D5DB] dark:border-0 dark:bg-[#4B4B4B] cursor-pointer rounded-r-md text-sm font-medium px-4 sm:px-9 py-2"
                         id="search_btn">Search</button>
                 </form>
-                <div class="movie_cont min-h-[73dvh] px-11 flex flex-col items-center py-10 justify-center" id="movie_cont">
+                <div class="movie_cont min-h-[73dvh] px-5 sm:px-11 flex flex-col items-center py-10 justify-center" id="movie_cont">
                     <img id="theme_placeholder_img" src="/images/no-data-initial.svg" alt="Start exploring"
                         class="placeholder_img">
                     <!-- Render movie cards here -->

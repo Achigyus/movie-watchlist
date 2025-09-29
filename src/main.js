@@ -88,7 +88,7 @@ function renderMovieList(movies, reset = false) {
                         <h2 class="movie_title text-lg text-black font-medium dark:text-white leading-[1.1]">${movie.Title}</h2>
                         <p class="movie_rating text-xs leading-[1.67] font-normal text-[#111827] dark:text-white">⭐ ${movie.imdbRating}</p>
                     </div>
-                    <div class="movie flex gap-6 items-center">
+                    <div class="movie flex flex-col gap-[5px] items-start sm:gap-6 sm:flex-row sm:items-center">
                         <p class="movie_runtime text-xs leading-[1.67] font-normal text-[#111827] dark:text-white">${movie.Runtime}</p>
                         <p class="movie_genre text-xs leading-[1.67] font-normal text-[#111827] dark:text-white">${movie.Genre}</p>
                         <button class="add_watchlist_btn text-xs cursor-pointer leading-[1.67] flex gap-[5px] items-center font-normal text-[#111827] dark:text-white"><img src="${plusIcon}" class="plus_icon" alt="Add to Watchlist"> Watchlist</button>
