@@ -4,6 +4,17 @@ A simple, modern web application to search for movies and manage your personal w
 
 ---
 
+> **Live site:** [https://movie-watchlist-achigyus.netlify.app/](https://movie-watchlist-achigyus.netlify.app/)
+
+---
+
+## 📸 Screenshot
+
+![Movie Watchlist Screenshot](/screenshot.png)
+
+---
+
+
 ## 🚀 Features
 
 - **Search for Movies:** Instantly search for movies using the OMDB API.
@@ -21,12 +32,6 @@ A simple, modern web application to search for movies and manage your personal w
 - **API:** [OMDB API](https://www.omdbapi.com/) for movie data.
 - **Persistence:** Uses `localStorage` to save your watchlist.
 - **Tooling:** Designed for easy integration with modern build tools (like Vite).
-
----
-
-## 📸 Screenshot
-
-![Movie Watchlist Screenshot](/screenshot.png)
 
 ---
 
